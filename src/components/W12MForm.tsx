@@ -20,15 +20,10 @@ const W12MForm = () => {
 		<section className='w12MForm'>
 			<W12MHeader />
 			<SpeciesName speciesName={speciesName} updateSpeciesName={(e: any) => setSpeciesName(e.target.value)} />
-			<br></br>
 			<PlanetName planetName={planetName} updatePlanetName={(e: any) => setPlanetName(e.target.value)} />
-			<br></br>
 			<BeingsNumber beingsNumber={beingsNumber} updateBeingsNumber={(e: any) => setBeingsNumber(e.target.value)} />
-			<br></br>
 			<TwoPlusAnswer twoPlusAnswer={twoPlusAnswer} updateTwoPlusAnswer={(e: any) => setTwoPlusAnswer(e.target.value)} />
-			<br></br>
 			<SparingReason sparingReason={sparingReason} updateSparingReason={(e: any) => setSparingReason(e.target.value)} />
-			<br></br>
 			<button type='submit' onClick={()=>{
 				setSubmitClicked(true);
 			}}>Submit</button>

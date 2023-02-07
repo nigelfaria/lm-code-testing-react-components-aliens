@@ -1,14 +1,15 @@
 
-interface SpeciesNameProps {
-    speciesName:string;
-    updateSpeciesName: (e:React.ChangeEvent<HTMLInputElement>) => void;
+export interface SpeciesNameProps {
+    speciesName: string;
+    updateSpeciesName: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const SpeciesName:React.FC<SpeciesNameProps> = ({speciesName, updateSpeciesName}) => (
+const SpeciesName: React.FC<SpeciesNameProps> = ({ speciesName, updateSpeciesName }) => (
     <>
         <label>
             Species Name:
+            <input type='text' value={speciesName} onChange={updateSpeciesName} />
         </label>
-        <input type='text' value={speciesName} onChange={updateSpeciesName} />
+
     </>
 );
 

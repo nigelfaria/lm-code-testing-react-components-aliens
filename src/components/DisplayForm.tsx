@@ -17,23 +17,18 @@ const DisplayForm: React.FC<DisplayFormProps> = ({ speciesName, planetName, bein
         return (<>
             <label>
                 {speciesName}
-                <br></br>
             </label>
             <label>
                 {planetName}
-                <br></br>
             </label>
             <label>
                 {beingsNumber}
-                <br></br>
             </label>
             <label>
                 {twoPlusAnswer}
-                <br></br>
             </label>
             <label>
                 {sparingReason}
-                <br></br>
             </label>
         </>);
     }
