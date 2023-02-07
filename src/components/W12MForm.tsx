@@ -11,7 +11,7 @@ const W12MForm = () => {
 	const [speciesName, setSpeciesName] = useState<string>('Human');
 	const [planetName, setPlanetName] = useState<string>('3rd Rock');
 	const [beingsNumber, setBeingsNumber] = useState<number>(8014332994);
-	const [twoPlusAnswer, setTwoPlusAnswer] = useState<string>('Not 4');
+	const [twoPlusAnswer, setTwoPlusAnswer] = useState<string>('4');
 	const [sparingReason, setSparingReason] = useState<string>('Just give me a reason');
 	const [submitClicked, setSubmitClicked] = useState<boolean>(false);
 
