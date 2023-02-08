@@ -15,21 +15,14 @@ const DisplayForm: React.FC<DisplayFormProps> = ({ speciesName, planetName, bein
     }
     else {
         return (<>
-            <label>
-                {speciesName}
-            </label>
-            <label>
-                {planetName}
-            </label>
-            <label>
-                {beingsNumber}
-            </label>
-            <label>
-                {twoPlusAnswer}
-            </label>
-            <label>
-                {sparingReason}
-            </label>
+            <div>
+                <p>{speciesName}</p>
+                <p>{planetName}</p>
+                <p>{beingsNumber}</p>
+                <p>{twoPlusAnswer}</p>
+                <p>{sparingReason}</p>
+
+            </div>
         </>);
     }
 

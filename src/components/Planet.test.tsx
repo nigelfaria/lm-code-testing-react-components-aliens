@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import PlanetName, {PlanetNameProps} from './Planet';
 
-describe('BeingsNumber', () => {
+describe('PlanetName', () => {
     it(`Given the required props, 
     When the component is rendered
     Then the label text should be present`, () => {

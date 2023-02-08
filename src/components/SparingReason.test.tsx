@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import SparingReason, {SparingReasonProps} from './SparingReason';
 
-describe('BeingsNumber', () => {
+describe('SparingReason', () => {
     it(`Given the required props, 
     When the component is rendered
     Then the label text should be present`, () => {

@@ -10,10 +10,10 @@ const BeingsNumber: React.FC<BeingsNumberProps> = ({ beingsNumber, updateBeingsN
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (/[^0-9]/.test(value)) {
-            return "Must be numbers only"
+            return "Must be numbers only";
         }
         if (parseInt(value) < 1000000000) {
-            return "Number of Beings must be at least 1,000,000,000"
+            return "Number of Beings must be at least 1,000,000,000";
         }
         return undefined;
     }
