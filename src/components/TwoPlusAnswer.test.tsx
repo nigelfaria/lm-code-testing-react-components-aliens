@@ -5,10 +5,10 @@ describe('TwoPlusAnswer', () => {
     it(`Given the required props, 
     When the component is rendered
     Then the label text should be present`, () => {
-        const mockUpdate = jest.fn();
+        const mockChange = jest.fn();
         const requiredProps: TwoPlusAnswerProps = {
             twoPlusAnswer: "4",
-            updateTwoPlusAnswer: mockUpdate,
+            handleChange: mockChange,
             }
         
         render(<TwoPlusAnswer {...requiredProps} />);

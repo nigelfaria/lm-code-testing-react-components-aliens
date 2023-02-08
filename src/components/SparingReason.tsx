@@ -3,9 +3,9 @@ import ErrorMessage from "./ErrorMessage";
 
 export interface SparingReasonProps {
     sparingReason: string;
-    updateSparingReason: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
-const SparingReason: React.FC<SparingReasonProps> = ({ sparingReason, updateSparingReason }) => {
+const SparingReason: React.FC<SparingReasonProps> = ({ sparingReason, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (value.length < 18 || value.length > 153) {
@@ -22,7 +22,7 @@ const SparingReason: React.FC<SparingReasonProps> = ({ sparingReason, updateSpar
                         (e) => {
                             const errorMessage = validate(e.target.value)
                             setErrorMessage(errorMessage);
-                            updateSparingReason(e);
+                            handleChange(e);
                         }
                     } />
                 <ErrorMessage message={errorMessage} />

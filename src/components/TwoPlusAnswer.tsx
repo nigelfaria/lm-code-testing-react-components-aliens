@@ -3,9 +3,9 @@ import ErrorMessage from "./ErrorMessage";
 
 export interface TwoPlusAnswerProps {
     twoPlusAnswer: string;
-    updateTwoPlusAnswer: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
-const TwoPlusAnswer: React.FC<TwoPlusAnswerProps> = ({ twoPlusAnswer, updateTwoPlusAnswer }) => {
+const TwoPlusAnswer: React.FC<TwoPlusAnswerProps> = ({ twoPlusAnswer, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (value === "Not4") {
@@ -22,7 +22,7 @@ const TwoPlusAnswer: React.FC<TwoPlusAnswerProps> = ({ twoPlusAnswer, updateTwoP
                     (e) => {
                         const errorMessage = validate(e.target.value)
                         setErrorMessage(errorMessage);
-                        updateTwoPlusAnswer(e);
+                        handleChange(e);
                     }
                 }>
                 <option value="Not4">Not 4</option>

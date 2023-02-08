@@ -8,7 +8,7 @@ describe('PlanetName', () => {
         const mockUpdate = jest.fn();
         const requiredProps: PlanetNameProps = {
             planetName: "Earth",
-            updatePlanetName: mockUpdate,
+            handleChange: mockUpdate,
             }
         
         render(<PlanetName {...requiredProps} />);

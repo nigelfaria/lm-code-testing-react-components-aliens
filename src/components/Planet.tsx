@@ -3,9 +3,9 @@ import ErrorMessage from "./ErrorMessage";
 
 export interface PlanetNameProps {
     planetName: string;
-    updatePlanetName: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const PlanetName: React.FC<PlanetNameProps> = ({ planetName, updatePlanetName }) => {
+const PlanetName: React.FC<PlanetNameProps> = ({ planetName, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (value.length < 3 || value.length > 49) {
@@ -25,7 +25,7 @@ const PlanetName: React.FC<PlanetNameProps> = ({ planetName, updatePlanetName })
                         (e) => {
                             const errorMessage = validate(e.target.value)
                             setErrorMessage(errorMessage);
-                            updatePlanetName(e);
+                            handleChange(e);
                         }
                     } />
                 <ErrorMessage message={errorMessage} />

@@ -8,7 +8,7 @@ describe('Species', () => {
         const mockUpdate = jest.fn();
         const requiredProps: SpeciesNameProps = {
             speciesName: "Some species",
-            updateSpeciesName: mockUpdate,
+            handleChange: mockUpdate,
             }
         
         render(<Species {...requiredProps} />);

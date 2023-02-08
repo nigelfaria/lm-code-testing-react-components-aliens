@@ -12,8 +12,6 @@ body {
 }
 
 label {
-	display: block;
-	margin-bottom: 0.8rem;
 	font-size: 1rem;
 	font-weight: bold;
   }
@@ -49,5 +47,8 @@ label {
 	display: block;
   }
   
+  div {
+	display: inline-block;
+  }
 
   

@@ -8,7 +8,7 @@ describe('SparingReason', () => {
         const mockUpdate = jest.fn();
         const requiredProps: SparingReasonProps = {
             sparingReason: "Some reason",
-            updateSparingReason: mockUpdate,
+            handleChange: mockUpdate,
             }
         
         render(<SparingReason {...requiredProps} />);

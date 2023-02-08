@@ -2,10 +2,10 @@ import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 export interface SpeciesNameProps {
     speciesName: string;
-    updateSpeciesName: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const SpeciesName: React.FC<SpeciesNameProps> = ({ speciesName, updateSpeciesName }) => {
+const SpeciesName: React.FC<SpeciesNameProps> = ({ speciesName, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (value.length < 4 || value.length > 23) {
@@ -26,7 +26,7 @@ const SpeciesName: React.FC<SpeciesNameProps> = ({ speciesName, updateSpeciesNam
                         (e) => {
                             const errorMessage = validate(e.target.value)
                             setErrorMessage(errorMessage);
-                            updateSpeciesName(e);
+                            handleChange(e);
                         }
                     } />
                 <ErrorMessage message={errorMessage} />

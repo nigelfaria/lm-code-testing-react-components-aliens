@@ -3,10 +3,9 @@ import ErrorMessage from "./ErrorMessage";
 
 export interface BeingsNumberProps {
     beingsNumber: number;
-    updateBeingsNumber: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const BeingsNumber: React.FC<BeingsNumberProps> = ({ beingsNumber, updateBeingsNumber }) => 
-{
+const BeingsNumber: React.FC<BeingsNumberProps> = ({ beingsNumber, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (/[^0-9]/.test(value)) {
@@ -19,20 +18,18 @@ const BeingsNumber: React.FC<BeingsNumberProps> = ({ beingsNumber, updateBeingsN
     }
 
     return (
-    <>
-        <label>
-            Number of beings:
-            <input type='text' value={beingsNumber} onChange={
-                        (e) => {
-                            const errorMessage = validate(e.target.value)
-                            setErrorMessage(errorMessage);
-                            updateBeingsNumber(e);
-                        }
-                    } />
-                <ErrorMessage message={errorMessage} />
-            </label>
-    </>
-)
-    };
+        <div>
+            <label htmlFor="beingsNumber">Number of beings:</label>
+            <input id="beingsNumber" type='text' value={beingsNumber} onChange={
+                (e) => {
+                    const errorMessage = validate(e.target.value)
+                    setErrorMessage(errorMessage);
+                    handleChange(e);
+                }
+            } />
+            <ErrorMessage message={errorMessage} />
+        </div>
+    )
+};
 
 export default BeingsNumber;
