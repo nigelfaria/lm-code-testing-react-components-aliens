@@ -27,6 +27,9 @@ const W12MForm = () => {
 			<button type='submit' onClick={()=>{
 				setSubmitClicked(true);
 			}}>Submit</button>
+			<button type='reset' onClick={()=>{
+				setSubmitClicked(false);
+			}}>Reset</button>
 		</section>
 		<section className='DisplayForm'>
 			<DisplayForm speciesName={speciesName} planetName={planetName} numberBeings={numberBeings} twoPlusAnswer={twoPlusAnswer} reasonSparing={reasonSparing} submitClicked={submitClicked}/>
