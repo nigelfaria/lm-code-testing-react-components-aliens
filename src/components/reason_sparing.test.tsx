@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ReasonSparing, {ReasonSparingProps} from './ReasonSparing';
+import ReasonSparing, {ReasonSparingProps} from './reason_sparing';
 
 describe('ReasonSparing', () => {
     it(`Given the required props, 

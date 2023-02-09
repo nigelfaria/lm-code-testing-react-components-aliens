@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TwoPlusAnswer, {TwoPlusAnswerProps} from './TwoPlusAnswer';
+import TwoPlusAnswer, {TwoPlusAnswerProps} from './two_plus_answer';
 
 describe('TwoPlusAnswer', () => {
     it(`Given the required props, 

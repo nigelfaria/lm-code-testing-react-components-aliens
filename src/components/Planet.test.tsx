@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PlanetName, {PlanetNameProps} from './Planet';
+import PlanetName, {PlanetNameProps} from './planet';
 
 describe('PlanetName', () => {
     it(`Given the required props, 

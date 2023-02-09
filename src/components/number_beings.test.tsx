@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
-import NumberBeings, { NumberBeingsProps } from './NumberBeings';
+import NumberBeings, { NumberBeingsProps } from './number_beings';
 
 describe('NumberBeings', () => {
     it(`Given the required props, 

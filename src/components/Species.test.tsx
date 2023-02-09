@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Species, {SpeciesNameProps} from './Species';
+import Species, {SpeciesNameProps} from './species';
 
 describe('Species', () => {
     it(`Given the required props, 

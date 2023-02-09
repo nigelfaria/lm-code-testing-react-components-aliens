@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import W12MHeader from './W12MHeader';
-import SpeciesName from './Species';
-import PlanetName from './Planet';
-import NumberBeings from './NumberBeings';
-import TwoPlusAnswer from './TwoPlusAnswer';
-import ReasonSparing from './ReasonSparing';
-import DisplayForm from './DisplayForm';
+import W12MHeader from './W12M_header';
+import SpeciesName from './species';
+import PlanetName from './planet';
+import NumberBeings from './number_beings';
+import TwoPlusAnswer from './two_plus_answer';
+import ReasonSparing from './reason_sparing';
+import DisplayForm from './display_form';
 
 const W12MForm = () => {
 	const [speciesName, setSpeciesName] = useState<string>('Human');
