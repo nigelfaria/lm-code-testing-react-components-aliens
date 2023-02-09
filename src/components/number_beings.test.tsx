@@ -3,7 +3,7 @@ import user from '@testing-library/user-event';
 import NumberBeings, { NumberBeingsProps } from './number_beings';
 
 describe('NumberBeings', () => {
-    const labelText = "Number of beings:";
+    const labelText = "Number of Beings:";
     it(`Given the required props, 
     When the component is rendered
     Then the label text should be present`, () => {

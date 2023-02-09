@@ -19,7 +19,7 @@ const NumberBeings: React.FC<NumberBeingsProps> = ({ numberBeings, handleChange 
 
     return (
         <div>
-            <label htmlFor="NumberBeings">Number of beings:</label>
+            <label htmlFor="NumberBeings">Number of Beings:</label>
             <input id="NumberBeings" type='text' value={numberBeings} onChange={
                 (e) => {
                     const errorMessage = validate(e.target.value)

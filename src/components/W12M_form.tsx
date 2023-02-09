@@ -8,11 +8,11 @@ import ReasonSparing from './reason_sparing';
 import DisplayForm from './display_form';
 
 const W12MForm = () => {
-	const [speciesName, setSpeciesName] = useState<string>('Human');
-	const [planetName, setPlanetName] = useState<string>('3rd Rock');
-	const [numberBeings, setNumberBeings] = useState<number>(8014332994);
+	const [speciesName, setSpeciesName] = useState<string>('');
+	const [planetName, setPlanetName] = useState<string>('');
+	const [numberBeings, setNumberBeings] = useState<number>(0);
 	const [twoPlusAnswer, setTwoPlusAnswer] = useState<string>('4');
-	const [reasonSparing, setReasonSparing] = useState<string>('Just give me a reason');
+	const [reasonSparing, setReasonSparing] = useState<string>('');
 	const [submitClicked, setSubmitClicked] = useState<boolean>(false);
 
 	return (
