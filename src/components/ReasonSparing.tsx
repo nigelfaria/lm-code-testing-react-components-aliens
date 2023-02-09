@@ -1,11 +1,11 @@
 import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
-export interface SparingReasonProps {
-    sparingReason: string;
+export interface ReasonSparingProps {
+    reasonSparing: string;
     handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
-const SparingReason: React.FC<SparingReasonProps> = ({ sparingReason, handleChange }) => {
+const ReasonSparing: React.FC<ReasonSparingProps> = ({ reasonSparing, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (value.length < 18 || value.length > 153) {
@@ -18,7 +18,7 @@ const SparingReason: React.FC<SparingReasonProps> = ({ sparingReason, handleChan
         <>
             <label>
                 Reason for sparing:
-                <textarea value={sparingReason} rows={4} cols={50}onChange={
+                <textarea value={reasonSparing} rows={4} cols={50}onChange={
                         (e) => {
                             const errorMessage = validate(e.target.value)
                             setErrorMessage(errorMessage);
@@ -31,4 +31,4 @@ const SparingReason: React.FC<SparingReasonProps> = ({ sparingReason, handleChan
     )
 };
 
-export default SparingReason;
+export default ReasonSparing;

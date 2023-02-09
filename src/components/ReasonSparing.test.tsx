@@ -1,19 +1,19 @@
 import { render, screen } from '@testing-library/react';
-import SparingReason, {SparingReasonProps} from './SparingReason';
+import ReasonSparing, {ReasonSparingProps} from './ReasonSparing';
 
-describe('SparingReason', () => {
+describe('ReasonSparing', () => {
     it(`Given the required props, 
     When the component is rendered
     Then the label text should be present`, () => {
         const mockUpdate = jest.fn();
-        const requiredProps: SparingReasonProps = {
-            sparingReason: "Some reason",
+        const requiredProps: ReasonSparingProps = {
+            reasonSparing: "Some reason",
             handleChange: mockUpdate,
             }
         
-        render(<SparingReason {...requiredProps} />);
+        render(<ReasonSparing {...requiredProps} />);
 
         expect(screen.getByText("Reason for sparing:")).toBeInTheDocument();
-        expect(screen.getByDisplayValue(requiredProps.sparingReason)).toBeInTheDocument();
+        expect(screen.getByDisplayValue(requiredProps.reasonSparing)).toBeInTheDocument();
     });
 });

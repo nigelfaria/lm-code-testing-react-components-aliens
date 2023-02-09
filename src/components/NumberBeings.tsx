@@ -1,11 +1,11 @@
 import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
-export interface BeingsNumberProps {
-    beingsNumber: number;
+export interface NumberBeingsProps {
+    numberBeings: number;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const BeingsNumber: React.FC<BeingsNumberProps> = ({ beingsNumber, handleChange }) => {
+const NumberBeings: React.FC<NumberBeingsProps> = ({ numberBeings, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
     const validate: (value: string) => string | undefined = (value) => {
         if (/[^0-9]/.test(value)) {
@@ -19,8 +19,8 @@ const BeingsNumber: React.FC<BeingsNumberProps> = ({ beingsNumber, handleChange 
 
     return (
         <div>
-            <label htmlFor="beingsNumber">Number of beings:</label>
-            <input id="beingsNumber" type='text' value={beingsNumber} onChange={
+            <label htmlFor="NumberBeings">Number of beings:</label>
+            <input id="NumberBeings" type='text' value={numberBeings} onChange={
                 (e) => {
                     const errorMessage = validate(e.target.value)
                     setErrorMessage(errorMessage);
@@ -32,4 +32,4 @@ const BeingsNumber: React.FC<BeingsNumberProps> = ({ beingsNumber, handleChange 
     )
 };
 
-export default BeingsNumber;
+export default NumberBeings;

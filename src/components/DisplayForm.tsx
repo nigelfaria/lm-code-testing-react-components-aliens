@@ -2,13 +2,13 @@ import { useEffect } from "react";
 interface DisplayFormProps {
     speciesName: string;
     planetName: string;
-    beingsNumber: number;
+    numberBeings: number;
     twoPlusAnswer: string;
-    sparingReason: string;
+    reasonSparing: string;
     submitClicked: boolean;
 }
 
-const DisplayForm: React.FC<DisplayFormProps> = ({ speciesName, planetName, beingsNumber, twoPlusAnswer, sparingReason, submitClicked }) => {
+const DisplayForm: React.FC<DisplayFormProps> = ({ speciesName, planetName, numberBeings, twoPlusAnswer, reasonSparing, submitClicked }) => {
     useEffect(() => { }, [submitClicked]);
     if (!submitClicked) {
         return null;
@@ -18,9 +18,9 @@ const DisplayForm: React.FC<DisplayFormProps> = ({ speciesName, planetName, bein
             <div>
                 <p>{speciesName}</p>
                 <p>{planetName}</p>
-                <p>{beingsNumber}</p>
+                <p>{numberBeings}</p>
                 <p>{twoPlusAnswer}</p>
-                <p>{sparingReason}</p>
+                <p>{reasonSparing}</p>
 
             </div>
         </>);
