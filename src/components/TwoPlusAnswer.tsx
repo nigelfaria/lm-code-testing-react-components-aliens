@@ -3,7 +3,7 @@ import ErrorMessage from "./ErrorMessage";
 
 export interface TwoPlusAnswerProps {
     twoPlusAnswer: string;
-    handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    handleChange: (newValue: string) => void;
 }
 const TwoPlusAnswer: React.FC<TwoPlusAnswerProps> = ({ twoPlusAnswer, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
@@ -22,7 +22,7 @@ const TwoPlusAnswer: React.FC<TwoPlusAnswerProps> = ({ twoPlusAnswer, handleChan
                     (e) => {
                         const errorMessage = validate(e.target.value)
                         setErrorMessage(errorMessage);
-                        handleChange(e);
+                        handleChange(e.target.value);
                     }
                 }>
                 <option value="Not4">Not 4</option>

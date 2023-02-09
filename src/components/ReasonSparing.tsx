@@ -3,7 +3,7 @@ import ErrorMessage from "./ErrorMessage";
 
 export interface ReasonSparingProps {
     reasonSparing: string;
-    handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    handleChange: (newValue: string) => void;
 }
 const ReasonSparing: React.FC<ReasonSparingProps> = ({ reasonSparing, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
@@ -18,13 +18,13 @@ const ReasonSparing: React.FC<ReasonSparingProps> = ({ reasonSparing, handleChan
         <>
             <label>
                 Reason for sparing:
-                <textarea value={reasonSparing} rows={4} cols={50}onChange={
-                        (e) => {
-                            const errorMessage = validate(e.target.value)
-                            setErrorMessage(errorMessage);
-                            handleChange(e);
-                        }
-                    } />
+                <textarea value={reasonSparing} rows={4} cols={50} onChange={
+                    (e) => {
+                        const errorMessage = validate(e.target.value)
+                        setErrorMessage(errorMessage);
+                        handleChange(e.target.value);
+                    }
+                } />
                 <ErrorMessage message={errorMessage} />
             </label>
         </>

@@ -3,7 +3,7 @@ import ErrorMessage from "./ErrorMessage";
 
 export interface NumberBeingsProps {
     numberBeings: number;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (newValue: string) => void;
 }
 const NumberBeings: React.FC<NumberBeingsProps> = ({ numberBeings, handleChange }) => {
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
@@ -24,7 +24,7 @@ const NumberBeings: React.FC<NumberBeingsProps> = ({ numberBeings, handleChange 
                 (e) => {
                     const errorMessage = validate(e.target.value)
                     setErrorMessage(errorMessage);
-                    handleChange(e);
+                    handleChange(e.target.value);
                 }
             } />
             <ErrorMessage message={errorMessage} />

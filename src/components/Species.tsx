@@ -2,7 +2,7 @@ import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 export interface SpeciesNameProps {
     speciesName: string;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (newValue: string) => void;
 }
 
 const SpeciesName: React.FC<SpeciesNameProps> = ({ speciesName, handleChange }) => {
@@ -26,7 +26,7 @@ const SpeciesName: React.FC<SpeciesNameProps> = ({ speciesName, handleChange }) 
                         (e) => {
                             const errorMessage = validate(e.target.value)
                             setErrorMessage(errorMessage);
-                            handleChange(e);
+                            handleChange(e.target.value);
                         }
                     } />
                 <ErrorMessage message={errorMessage} />

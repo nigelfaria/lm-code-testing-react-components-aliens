@@ -19,11 +19,11 @@ const W12MForm = () => {
 		<>
 		<section className='w12MForm'>
 			<W12MHeader />
-			<SpeciesName speciesName={speciesName} handleChange={(e: React.ChangeEvent<HTMLInputElement>) => setSpeciesName(e.target.value)} />
-			<PlanetName planetName={planetName} handleChange={(e: React.ChangeEvent<HTMLInputElement>) => setPlanetName(e.target.value)} />
-			<NumberBeings numberBeings={numberBeings} handleChange={(e: React.ChangeEvent<HTMLInputElement>) => setNumberBeings(parseInt(e.target.value))} />
-			<TwoPlusAnswer twoPlusAnswer={twoPlusAnswer} handleChange={(e: React.ChangeEvent<HTMLSelectElement>) => setTwoPlusAnswer(e.target.value)} />
-			<ReasonSparing reasonSparing={reasonSparing} handleChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setReasonSparing(e.target.value)} />
+			<SpeciesName speciesName={speciesName} handleChange={(newValue: string) => setSpeciesName(newValue)} />
+			<PlanetName planetName={planetName} handleChange={(newValue: string) => setPlanetName(newValue)} />
+			<NumberBeings numberBeings={numberBeings} handleChange={(newValue:string) => setNumberBeings(parseInt(newValue))} />
+			<TwoPlusAnswer twoPlusAnswer={twoPlusAnswer} handleChange={(newValue: string) => setTwoPlusAnswer(newValue)} />
+			<ReasonSparing reasonSparing={reasonSparing} handleChange={(newValue: string) => setReasonSparing(newValue)} />
 			<button type='submit' onClick={()=>{
 				setSubmitClicked(true);
 			}}>Submit</button>
