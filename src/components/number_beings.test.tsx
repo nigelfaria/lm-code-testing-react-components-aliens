@@ -3,48 +3,33 @@ import user from '@testing-library/user-event';
 import NumberBeings, { NumberBeingsProps } from './number_beings';
 
 describe('NumberBeings', () => {
+    const labelText = "Number of beings:";
     it(`Given the required props, 
     When the component is rendered
     Then the label text should be present`, () => {
         const mockChange = jest.fn();
         const requiredProps: NumberBeingsProps = {
-            numberBeings: 0,
+            numberBeings: 400,
             handleChange: mockChange,
         }
 
         render(<NumberBeings {...requiredProps} />);
 
-        expect(screen.getByText("Number of beings:")).toBeInTheDocument();
+        expect(screen.getByText(labelText)).toBeInTheDocument();
         expect(screen.getByDisplayValue(requiredProps.numberBeings)).toBeInTheDocument();
     });
-    it(`Given valid inputs, 
-        When the component is rendered
-        Then no error messages are present`, async () => {
-        const mockUpdate = jest.fn();
+
+    it(`Given rendered component, 
+    When the user inputs something
+    Then the handleChange function is called`, async () => {
+        const mockChange = jest.fn();
         const requiredProps: NumberBeingsProps = {
-            numberBeings: 0,
-            handleChange: mockUpdate,
+            numberBeings: 1,
+            handleChange: mockChange,
         }
-
         render(<NumberBeings {...requiredProps} />);
-        const inputElement = screen.getByLabelText("Number of beings:");
-        await user.type(inputElement, "10000000000");
-        expect(screen.queryByText("Must be numbers only")).not.toBeInTheDocument();
-        expect(screen.queryByText("Number of Beings must be at least 1,000,000,000")).not.toBeInTheDocument();
-    });
-    it(`Given text input, 
-    When the component is rendered
-    Then the appropriate error messages are present`, () => {
-        const mockUpdate = jest.fn();
-        const requiredProps: NumberBeingsProps = {
-            numberBeings: 0,
-            handleChange: mockUpdate,
-        }
-
-        render(<NumberBeings {...requiredProps} />);
-
-        expect(screen.queryByText("Must be numbers only")).not.toBeInTheDocument();
-        expect(screen.queryByText("Number of Beings must be at least 1,000,000,000")).not.toBeInTheDocument();
+        await user.type(screen.getByLabelText(labelText),"123");
+        expect(requiredProps.handleChange).toHaveBeenCalledTimes(3);
     });
 
 
